@@ -14,6 +14,7 @@ fun IvyMaterial3Theme(
 ) {
     MaterialTheme(
         colorScheme = if (dark) ivyDarkColorScheme(isTrueBlack) else ivyLightColorScheme(),
+        typography = IvyTypography, // 🔤 Hooked up our custom font here!
         content = content,
     )
 }
@@ -40,16 +41,19 @@ private fun ivyLightColorScheme(): ColorScheme = ColorScheme(
 
     background = IvyColors.White,
     onBackground = IvyColors.Black,
-    surface = IvyColors.White,
+    
+    // 🧊 GLASSMORPHISM LIGHT MODE TWEAKS 🧊
+    surface = IvyColors.White.copy(alpha = 0.4f), 
     onSurface = IvyColors.Black,
-    surfaceVariant = IvyColors.ExtraLightGray,
+    surfaceVariant = IvyColors.ExtraLightGray.copy(alpha = 0.2f),
     onSurfaceVariant = IvyColors.Black,
+    
     surfaceTint = IvyColors.Black,
     inverseSurface = IvyColors.DarkGray,
     inverseOnSurface = IvyColors.White,
 
-    outline = IvyColors.Gray,
-    outlineVariant = IvyColors.DarkGray,
+    outline = IvyColors.Gray.copy(alpha = 0.5f), // softer borders for glass
+    outlineVariant = IvyColors.DarkGray.copy(alpha = 0.3f),
     scrim = IvyColors.ExtraDarkGray.copy(alpha = 0.8f)
 )
 
@@ -75,15 +79,18 @@ private fun ivyDarkColorScheme(isTrueBlack: Boolean): ColorScheme = ColorScheme(
 
     background = if (isTrueBlack) IvyColors.TrueBlack else IvyColors.Black,
     onBackground = IvyColors.White,
-    surface = if (isTrueBlack) IvyColors.TrueBlack else IvyColors.Black,
+    
+    // 🧊 GLASSMORPHISM DARK MODE TWEAKS 🧊
+    surface = (if (isTrueBlack) IvyColors.TrueBlack else IvyColors.Black).copy(alpha = 0.4f),
     onSurface = IvyColors.White,
-    surfaceVariant = IvyColors.ExtraDarkGray,
+    surfaceVariant = IvyColors.ExtraDarkGray.copy(alpha = 0.3f),
     onSurfaceVariant = IvyColors.White,
+    
     surfaceTint = IvyColors.White,
     inverseSurface = IvyColors.LightGray,
     inverseOnSurface = if (isTrueBlack) IvyColors.TrueBlack else IvyColors.Black,
 
-    outline = IvyColors.Gray,
-    outlineVariant = IvyColors.LightGray,
+    outline = IvyColors.Gray.copy(alpha = 0.5f),
+    outlineVariant = IvyColors.LightGray.copy(alpha = 0.2f),
     scrim = IvyColors.ExtraLightGray.copy(alpha = 0.8f)
 )
