@@ -8,7 +8,7 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.sp
 
 // Note: You might need to adjust the 'R' import depending on the exact module namespace during the GitHub Actions build, but this will get it recognized!
-import com.ivy.ui.core.R 
+import com.ivy.ui.R 
 
 val GlassSerifFont = FontFamily(
     Font(R.font.glass_serif_regular, FontWeight.Normal),
