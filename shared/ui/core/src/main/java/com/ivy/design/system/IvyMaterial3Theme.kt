@@ -14,7 +14,7 @@ fun IvyMaterial3Theme(
 ) {
     MaterialTheme(
         colorScheme = if (dark) ivyDarkColorScheme(isTrueBlack) else ivyLightColorScheme(),
-        typography = IvyTypography, // 🔤 Hooked up our custom font here!
+        typography = IvyTypography, // 🔤 Fully hooked up to the bulletproof custom font!
         content = content,
     )
 }
@@ -52,7 +52,7 @@ private fun ivyLightColorScheme(): ColorScheme = ColorScheme(
     inverseSurface = IvyColors.DarkGray,
     inverseOnSurface = IvyColors.White,
 
-    outline = IvyColors.Gray.copy(alpha = 0.5f), // softer borders for glass
+    outline = IvyColors.Gray.copy(alpha = 0.5f), 
     outlineVariant = IvyColors.DarkGray.copy(alpha = 0.3f),
     scrim = IvyColors.ExtraDarkGray.copy(alpha = 0.8f)
 )
